@@ -104,4 +104,4 @@ def split_wight():
     vae.save_weights('VAE.h5')
 
 if __name__ == '__main__':
-    split_wight()
+    train()

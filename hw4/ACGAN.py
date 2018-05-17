@@ -141,10 +141,6 @@ def generate(dir_name,name,number):
         plt.imsave(dir_name+name+'_'+str(i)+'_neg.jpg',faces_neg[i])
 
 if __name__ == '__main__':
-    #pre(0)
-    #train()
-    acgan.load_weights('ACGAN.h5')
-    ACGAN_generator.save_weights('ACGAN_generator.h5')
-    
-    
+    pre(0)
+    train()
     

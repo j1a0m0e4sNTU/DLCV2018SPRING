@@ -117,7 +117,5 @@ def generate(dir_name,name,number):
 if __name__ == '__main__':
     gan.load_weights(weights_name_load)
     #pre()
-    #train()
-    GAN_generator.save_weights('GAN_generator.h5')
-
-    
+    train()
+ 

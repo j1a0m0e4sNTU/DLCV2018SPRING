@@ -63,11 +63,11 @@ def main():
 
     for name in vdo_dirs:
 
-        vdo = get_features(vdo_dir+name+'/')
+        vdo = get_features(vdo_dir+'/'+name+'/')
         img_num = vdo.shape[0]
         # now get features (vdo_num, 2048,7,10)
     
-        txt = open(txt_dest+name+'.txt','w')
+        txt = open(txt_dest+'/'+name+'.txt','w')
         predictor = RNN_predictor().cuda()
         predictor.load_state_dict(torch.load(model_name))
         result = torch.zeros((img_num ,))

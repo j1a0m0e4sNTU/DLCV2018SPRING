@@ -52,7 +52,7 @@ if __name__ == '__main__':
     vdo_num = vdo_features.shape[0]
     # now get features (vdo_num, 2048,7,10)
     
-    txt = open(txt_dest+'p1_valid.txt','w')
+    txt = open(txt_dest+'/p1_valid.txt','w')
     predictor = ActionPredictor().cuda()
     predictor.load_state_dict(torch.load(model_name))
     result = torch.zeros((vdo_num ,))

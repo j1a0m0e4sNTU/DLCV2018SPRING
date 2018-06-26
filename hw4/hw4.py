@@ -169,8 +169,8 @@ if __name__ == '__main__':
     GAN_generator.load_weights('GAN_generator.h5')
     ACGAN_generator.load_weights('ACGAN_generator.h5')
 
-    source_dir = sys.argv[1]
-    dest_dir   = sys.argv[2]
+    source_dir = sys.argv[1] +'/'
+    dest_dir   = sys.argv[2][:-1] +'/'
     
     fig1_2(dest_dir)
     fig1_3(source_dir,dest_dir)

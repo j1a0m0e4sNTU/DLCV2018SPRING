@@ -62,7 +62,7 @@ def load_novel_class(shot) :
 
 
 
-def evaluation(model, support_data, data_fp, output_fp) :
+def evaluation(model, shot, support_data, data_fp, output_fp) :
     model.cuda()
     model.eval()
     table = [0, 10, 23, 30, 32, 35, 48, 54, 57, 59, 60, 64, 66, 69, 71, 82, 91, 92, 93, 95 ]
@@ -84,7 +84,7 @@ def evaluation(model, support_data, data_fp, output_fp) :
         pred_list.append([i, "{:0>2}".format(table[int(pred[0])])])
 
     pred_df = pd.DataFrame(pred_list)
-    pred_df.to_csv(output_fp, header=["image_id", "predicted_label"], index=None)
+    pred_df.to_csv(os.path.join(output_fp, "prediction_{}_shot.csv".format(shot)), header=["image_id", "predicted_label"], index=None)
 
 
 
@@ -120,5 +120,5 @@ if __name__ == "__main__" :
     novel_support, novel_test = load_data(BASE_DIR_FP, NOVEL_DIR_FP, shot)
     model = load_model(model_version, model_fp)
     #support_data = load_novel_class(shot)
-    evaluation(model, novel_support, data_fp, output_fp)
+    evaluation(model, shot, novel_support, data_fp, output_fp)
 

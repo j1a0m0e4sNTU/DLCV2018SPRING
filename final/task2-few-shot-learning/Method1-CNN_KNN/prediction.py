@@ -105,6 +105,7 @@ if __name__ == "__main__" :
     parser.add_argument("--version", type=int, required=True, help="version of model")
     parser.add_argument("--data", type=str, required=True, help="data dir path")
     parser.add_argument("--output", type=str, required=True, help="file path for output" )
+    parser.add_argument("--novel", type=str, required=True)
     parser.add_argument("--seed", type=int, required=True, help="seed")
 
     way = parser.parse_args().way
@@ -112,12 +113,13 @@ if __name__ == "__main__" :
     model_fp = parser.parse_args().load
     model_version = parser.parse_args().version
     data_fp = parser.parse_args().data
+    novel_dir_fp = parser.parse_args().novel
     output_fp = parser.parse_args().output
     seed = parser.parse_args().seed
 
     random.seed(seed)
 
-    novel_support, novel_test = load_data(NOVEL_DIR_FP, shot)
+    novel_support, novel_test = load_data(novel_dir_fp, shot)
     model = load_model(model_version, model_fp)
     #support_data = load_novel_class(shot)
     evaluation(model, shot, novel_support, data_fp, output_fp)

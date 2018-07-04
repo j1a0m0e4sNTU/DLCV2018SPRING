@@ -117,7 +117,7 @@ if __name__ == "__main__" :
 
     random.seed(seed)
 
-    novel_support, novel_test = load_data(BASE_DIR_FP, NOVEL_DIR_FP, shot)
+    novel_support, novel_test = load_data(NOVEL_DIR_FP, shot)
     model = load_model(model_version, model_fp)
     #support_data = load_novel_class(shot)
     evaluation(model, shot, novel_support, data_fp, output_fp)

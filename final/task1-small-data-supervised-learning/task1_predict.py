@@ -10,10 +10,13 @@ from keras import backend as K
 from load_data import load_data, load_data_split, load_image,load_labels,load_labels_split
 
 import sys
+import os
 
 
 test_dir = sys.argv[1]
-csv_name = sys.argv[2]
+csv_dir = sys.argv[2]
+
+csv_name = os.path.join(csv_dir,'predict.csv')
 
 h=28
 w=28

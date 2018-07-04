@@ -10,7 +10,7 @@ from models import MODELS
 
 
 
-def load_data(base_dp, novel_dp, shot=5) :
+def load_data(novel_dp, shot=5) :
     # novel loading
     # img shape = (32, 32, 3), pixel range=(0, 1)
     novel_support = np.zeros((20, shot, 32, 32, 3))

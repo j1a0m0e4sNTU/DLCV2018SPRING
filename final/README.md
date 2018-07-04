@@ -2,10 +2,10 @@
 
 
 ### Task 1 
-Example
+Run
 ```console
 bash task1_predict.sh $1 $2
-# $1 test dataset dir
+# $1 test dataset dir path
 # $2 output dir path
 ```
 Example
@@ -16,10 +16,11 @@ Then, it would produce one .csv file `predict.csv` in `output/` directory.
 
 
 ### Task2
+Run
 ```console
 bash final_cnn.sh $1 $2 $3
 # $1 training novel dataset dir
-# $2 test dataset dir
+# $2 test dataset dir path
 # $3 output dir path
 ```
 Example

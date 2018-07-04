@@ -19,7 +19,7 @@ Then, it would produce one .csv file `predict.csv` in `output/` directory.
 Run
 ```console
 bash final_cnn.sh $1 $2 $3
-# $1 training novel dataset dir
+# $1 training novel dataset dir path
 # $2 test dataset dir path
 # $3 output dir path
 ```
